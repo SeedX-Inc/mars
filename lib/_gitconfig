@@ -1,0 +1,9 @@
+[color]
+  ui = true
+[alias]
+  a = add
+  s = status
+  co = checkout
+  cm = commit -m
+  ph = push
+  pl = pull

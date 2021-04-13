@@ -25,6 +25,11 @@ $ mars edit vim
 ```
 
 ```bash
+$ mars edit git
+#editing file .mars/lib/_gitconf
+```
+
+```bash
 $ mars edit core
 #editing mars code of core
 ```
@@ -36,15 +41,20 @@ $ mars edit hello
 
 **Configuration commands**
 ```bash
-$ sudo apt install vim
-$ mars configure vim
+# Please, install vim via 'sudo apt install vim' before
+$ mars conf vim
 #installing vim plug
 #installing jellybeans colorscheme
 #rewriting your ~/.vimrc for connect mars vimrc file with custom configuration
 ```
 ```bash
-$ mars configure hello
+$ mars conf hello
 #connecting Mars PS1 (prompt hello message) configuration to your .bashrc 
 $ mars s
 #reloading shell
+```
+
+```bash
+$ mars conf git name email username
+#rewriting ~/.gitconfig and connecting gitconfig of mars
 ```

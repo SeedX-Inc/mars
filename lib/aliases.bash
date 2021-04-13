@@ -61,6 +61,22 @@ function configure_hello(){
   fi
 }
 
+function configure_gitconfig(){
+  #if ! grep -q "path = ~/.mars/lib/_gitconfig" "$HOME/.gitconfig" ; then
+	  echo "[include]" > $HOME/.gitconfig #rewrite old file
+		echo "  path = ~/.mars/lib/_gitconfig" >> $HOME/.gitconfig #append to new file
+		echo "[user]" >> $HOME/.gitconfig #append to new file
+		echo "  name = $1" >> $HOME/.gitconfig #append to new file
+		echo "  email = $2" >> $HOME/.gitconfig #append to new file
+		echo "  username = $3" >> $HOME/.gitconfig #append to new file
+		echo "[core]" >> $HOME/.gitconfig #append to new file
+    echo "  editor = vim" >> $HOME/.gitconfig
+    echo "[OK] Gitconfig rewrited succussfully!"
+  #else
+  #  echo "[OK] Seems like mars gitconfig already included"
+  #fi
+}
+
 function configure_vim(){
   if type vim &> /dev/null ; then
 	  if [[ -f $HOME/.vimrc ]]; then
@@ -103,13 +119,16 @@ function what_edit(){
 }
 
 function action_processor(){
-  if [[ "$1" == "configure" ]]; then
+  if [[ "$1" == "conf" ]]; then
     case "$2" in
 	    "vim" )
 		    configure_vim
 		    ;;
       "hello" )
         configure_hello
+        ;;
+      "git" )
+        configure_gitconfig $3 $4 $5
         ;;
     esac
   elif [[ "$1" == "edit" ]]; then
@@ -122,3 +141,4 @@ function action_processor(){
 }
 
 alias mars="action_processor"
+alias g="git"
