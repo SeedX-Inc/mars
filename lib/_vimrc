@@ -1,0 +1,23 @@
+set hlsearch
+set incsearch
+set number
+
+set expandtab
+
+set tabstop=2
+"set smartindent
+set autoindent
+set expandtab
+set shiftwidth=2
+
+colorscheme jellybeans
+
+
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+
+Plug 'nanotech/jellybeans.vim'
+
+call plug#end()
+
+map <C-n> :NEERDTreeToggle<CR>
