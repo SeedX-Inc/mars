@@ -5,6 +5,8 @@ Ubuntu server tool
 
 **Installing**
 ```bash
+$ git clone https://github.com/enotikalt/mars.git
+$ mv mars ~/.mars
 $ cd .mars && ./mars.bash
 #connecting mars to your .bashrc if not connected yet
 ```
