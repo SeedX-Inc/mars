@@ -35,8 +35,8 @@ $ mars edit hello
 ```
 
 **Configuration commands**
-Install vim before this.
 ```bash
+$ sudo apt install vim
 $ mars configure vim
 #installing vim plug
 #installing jellybeans colorscheme
