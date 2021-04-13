@@ -18,21 +18,33 @@ $ mars s
 #Reload your shell via source ~/.bashrc
 ```
 
+_Editing:_
 ```bash
 $ mars edit vim
 #editing file .mars/lib/_vimrc
 ```
+
 ```bash
 $ mars edit core
-#editing mars code
+#editing mars code of core
 ```
 
-**Configurating**
+```bash
+$ mars edit hello
+#editing mars PS1 variable
+```
 
+**Configuration commands**
 Install vim before this.
 ```bash
 $ mars configure vim
 #installing vim plug
 #installing jellybeans colorscheme
 #rewriting your ~/.vimrc for connect mars vimrc file with custom configuration
+```
+```bash
+$ mars configure hello
+#connecting Mars PS1 (prompt hello message) configuration to your .bashrc 
+$ mars s
+#reloading shell
 ```
