@@ -96,6 +96,8 @@ function what_edit(){
     vim ~/.mars/lib/_gitconfig
 	elif [[ "$1" == "core" ]]; then
 		vim ~/.mars/lib/aliases.bash
+  elif [[ "$1" == "hello" ]]; then
+    vim ~/.mars/lib/ps1.bash
   else
     echo "[ERROR] Incorrect command."
   fi
