@@ -15,9 +15,6 @@ colorscheme jellybeans
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-
-Plug 'nanotech/jellybeans.vim'
-
 call plug#end()
 
 map <C-n> :NEERDTreeToggle<CR>

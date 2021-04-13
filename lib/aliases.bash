@@ -75,7 +75,7 @@ function configure_vim(){
       echo "[OK] .vimrc not exist yet. But will be created."
 	  fi
   
-    if echo "source $HOME/.mars/lib/_vimrc" > $HOME/.vimrc ; then
+    if echo "source $HOME/.mars/lib/_vimrc" >> $HOME/.vimrc ; then
 		  echo "[OK] New configuration wrote to (~/.vimrc)"
       install_curl
       install_vimplug
