@@ -52,8 +52,7 @@ function install_colorscheme(){
 function configure_hello(){
   if ! grep -q "source ~/.mars/lib/ps1.bash" "$HOME/.bashrc" ; then
     if echo "source ~/.mars/lib/ps1.bash" >> $HOME/.bashrc ; then
-      echo "[OK] Hello prompt message changed successfully"
-      source $HOME/.bashrc
+      echo "[OK] Hello prompt message changed successfully. Make 'mars s' for reloading shell." 
     else
       echo "[ERROR] Couldn't change your prompt hello message"
     fi
