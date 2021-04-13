@@ -63,7 +63,7 @@ function configure_vim(){
       echo "[OK] .vimrc not exist yet. But will be created."
 	  fi
   
-    if echo "source $HOME/.mars/lib/_vimrc" > $HOME/.vimrc ; then
+    if echo "source $HOME/.mars/lib/_vimrc" >> $HOME/.vimrc ; then
 		  echo "[OK] New configuration wrote to (~/.vimrc)"
       install_curl
       install_vimplug
@@ -101,8 +101,7 @@ function action_processor(){
   elif [[ "$1" == "s" ]]; then
 	  source ~/.bashrc
   else
-    test_one
-	  #echo "[ERROR] Unknown command"
+    echo "[ERROR] Unknown command"
   fi
 }
 
