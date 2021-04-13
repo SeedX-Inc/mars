@@ -49,6 +49,18 @@ function install_colorscheme(){
 
 }
 
+function configure_hello(){
+  if ! grep -q "source ~/.mars/lib/ps1.bash" "$HOME/.bashrc" ; then
+    if echo "source ~/.mars/lib/ps1.bash" >> $HOME/.bashrc ; then
+      echo "[OK] Hello prompt message changed successfully"
+      source $HOME/.bashrc
+    else
+      echo "[ERROR] Couldn't change your prompt hello message"
+    fi
+  else
+    echo "[OK] Your PS1 var already redefined"
+  fi
+}
 
 function configure_vim(){
   if type vim &> /dev/null ; then
@@ -95,14 +107,16 @@ function action_processor(){
 	    "vim" )
 		    configure_vim
 		    ;;
+      "hello" )
+        configure_hello
+        ;;
     esac
   elif [[ "$1" == "edit" ]]; then
     what_edit $2
   elif [[ "$1" == "s" ]]; then
 	  source ~/.bashrc
   else
-    test_one
-	  #echo "[ERROR] Unknown command"
+	  echo "[ERROR] Unknown command"
   fi
 }
 
