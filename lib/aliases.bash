@@ -118,6 +118,15 @@ function what_edit(){
   fi
 }
 
+
+function deploy_assets_precompile(){
+  bundle exec rake assets:precompile RAILS_ENV=production
+}
+
+function deploy_dbmigrate(){
+  bundle exec rake db:migrate RAILS_ENV=production
+}
+
 function action_processor(){
   if [[ "$1" == "conf" ]]; then
     case "$2" in
@@ -133,12 +142,17 @@ function action_processor(){
     esac
   elif [[ "$1" == "edit" ]]; then
     what_edit $2
+  elif [[  "$1" == "precompile" ]]; then
+    deploy_assets_precompile
+  elif [[  "$1" == "migrate" ]]; then
+    deploy_dbmigrate
   elif [[ "$1" == "s" ]]; then
 	  source ~/.bashrc
   else
 	  echo "[ERROR] Unknown command"
   fi
 }
+
 
 alias mars="action_processor"
 alias g="git"

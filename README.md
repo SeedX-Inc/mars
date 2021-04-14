@@ -12,6 +12,20 @@ $ cd .mars && ./mars.bash
 $ source ~/.bashrc
 ```
 
+**Deploy documentation**
+
+_This is commands for simplify deploy process_
+```bash
+$ mars precompile
+#This is alias for `assets:precompile` with production environment 
+#WARNING: You need to know that assets:precompile also makes `webpacker:compile` even if you don't using sprockets gem!
+```
+
+```bash
+$ mars migrate
+#This is alias for `db:migrate` with production environment
+```
+
 **Documentation**
 ```bash
 $ mars s
