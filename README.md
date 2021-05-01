@@ -29,6 +29,7 @@ $ mars migrate
 Use this commad with `sudo` preffix if you got some permission error.
 
 ```bash
+$ cd myapp_location
 $ mars restart-passenger
 #Alias passenger-config restart-app /home/deployuser/your_app_location
 ```
