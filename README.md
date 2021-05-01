@@ -26,6 +26,18 @@ $ mars migrate
 #This is alias for `db:migrate` with production environment
 ```
 
+Use this commad with `sudo` preffix if you got some permission error.
+
+```bash
+$ mars restart-passenger
+#Alias passenger-config restart-app /home/deployuser/your_app_location
+```
+
+```bash
+$ sudo mars restart-nginx
+#Here you doing restarting Systemd service, so, we recomended using this with sudo preffix
+```
+
 **Documentation**
 ```bash
 $ mars s

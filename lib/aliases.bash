@@ -127,6 +127,13 @@ function deploy_dbmigrate(){
   bundle exec rake db:migrate RAILS_ENV=production
 }
 
+function restart_passenger(){
+  passenger-config restart-app $(pwd)
+}
+function restart_nginx(){
+  service nginx restart
+}
+
 function action_processor(){
   if [[ "$1" == "conf" ]]; then
     case "$2" in
@@ -146,6 +153,10 @@ function action_processor(){
     deploy_assets_precompile
   elif [[  "$1" == "migrate" ]]; then
     deploy_dbmigrate
+  elif [[ "$1" == "restart-passenger" ]]; then
+    restart_passenger
+  elif [[ "$1" == "restart-nginx" ]]; then
+    restart_nginx
   elif [[ "$1" == "s" ]]; then
 	  source ~/.bashrc
   else
