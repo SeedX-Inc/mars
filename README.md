@@ -65,7 +65,7 @@ $ sudo mars restart-redis
 ```bash
 #-> Be sure you have `/lib/systemd/system/sidekiq.service` file
 #IF NOT - JUST enter this before:
-$ sudo cp ~/.mars/perks/sidekiq.service /lib/systemd/system/sidekiq.service
+$ mars conf sidekiq
 #THEN Setting it UP! Just change your app name and Ruby version with RVM gemset inside `sidekiq.service` file.
 #
 #

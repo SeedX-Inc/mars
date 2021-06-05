@@ -41,9 +41,9 @@ function restart_redis_failed(){
   systemctl restart redis-serverrrrrr
 }
 
-# function restart_sidekiq(){
-#   systemctl restart sidekiq
-# }
+function restart_sidekiq(){
+  systemctl restart sidekiq
+}
 
 function action_processor(){
   if [[ "$1" == "conf" ]]; then
