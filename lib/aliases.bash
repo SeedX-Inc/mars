@@ -57,6 +57,9 @@ function action_processor(){
       "git" )
         configure_gitconfig $3 $4 $5
         ;;
+      "sidekiq" )
+		    configure_sidekiq
+		    ;;
     esac
   elif [[ "$1" == "edit" ]]; then
     what_edit $2

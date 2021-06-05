@@ -3,7 +3,21 @@ Ubuntu server tool
 
 `.mars` folder need to be in your ubuntu home folder. Don't setup this via root User.
 
+**Additional info**
+
+This is how ubuntu sourcing configuration files.
+Just to know about:p
+
+```
+`~/.bash_profile` source from `~/.profile` source from `~/.bashrc` source from `~/.mars/aliases.bash`
+```
+
+**Requirenents**
+1. vim
+2. curl
+
 **Installing**
+
 ```bash
 $ git clone https://github.com/enotikalt/mars.git
 $ mv mars ~/.mars
@@ -14,12 +28,9 @@ $ source ~/.bashrc
 
 **Deploy documentation**
 
-This is how ubuntu sourcing configuration files
-
-`.bash_profile` source from `.profile` source from `.bashrc`
 
 
-_This is commands for simplify deploy RAILS BASED APP process_
+_This is ADDITIANALS commands for simplify deploy RAILS BASED APP process_
 ```bash
 $ mars precompile
 #This is alias for `assets:precompile` with production environment 
@@ -44,13 +55,16 @@ $ sudo mars restart-nginx
 #Here you doing restarting Systemd service, so, we recomended using this with sudo preffix
 ```
 
-**Documentation**
+----------------------------------------------------------
+
 ```bash
 $ mars s
 #Reload your shell via source ~/.bashrc
 ```
 
-_Editing:_
+**Editing**
+This few commands allows to you editing some configurations.
+
 ```bash
 $ mars edit vim
 #editing file .mars/lib/_vimrc
@@ -71,19 +85,22 @@ $ mars edit hello
 #editing mars PS1 variable
 ```
 
-**Configuration commands**
+**Configurating**
+
+Commands which allows to configure something.
+
 ```bash
-# Please, install vim via 'sudo apt install vim' before
 $ mars conf vim
 #installing vim plug
 #installing jellybeans colorscheme
 #rewriting your ~/.vimrc for connect mars vimrc file with custom configuration
 ```
+
 ```bash
 $ mars conf hello
 #connecting Mars PS1 (prompt hello message) configuration to your .bashrc 
 $ mars s
-#reloading shell
+#reloading shell (.bashrc)
 ```
 
 ```bash

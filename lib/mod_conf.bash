@@ -1,3 +1,24 @@
+###################
+###---Sidekiq--###
+##################
+function configure_sidekiq(){
+  # проверка существования файла
+  if [[ -f /lib/systemd/system/sidekiq.service ]]; then
+    echo "[ERROR] `sidekiq.service` file already exist."
+    sleep 5
+    echo "[Message] Opening `sidekiq.service` file for edit..."
+    vim /lib/systemd/system/sidekiq.service #edit sidekiq file
+  else
+    cp $HOME/.mars/perks/sidekiq.service /lib/systemd/system/sidekiq.service
+    if [[ -f /lib/systemd/system/sidekiq.service ]]; then
+      echo "[OK] sidekiq.service file copied successfully."
+      echo "[Message] Please, edit file `/lib/systemd/system/sidekiq.service` "
+    else
+      echo "[ERROR] `sidekiq.service` file not copied. Unknown error!"
+    else
+  fi
+}
+
 
 ###################
 ###---PS1 var--###
