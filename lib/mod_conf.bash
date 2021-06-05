@@ -5,11 +5,7 @@ function configure_sidekiq(){
   # проверка существования файла
   if [[ -f /lib/systemd/system/sidekiq.service ]]; then
     echo "Warning sidekiq.service file already exist."
-    echo "Opening sidekiq.service file for edit..."
-    sleep 5
-sudo bash << EOF
-  vim /lib/systemd/system/sidekiq.service
-EOF
+    echo "Enter 'vim /lib/systemd/system/sidekiq.service' for edit sidekiq.service file"
   else
 
 sudo bash << EOF
