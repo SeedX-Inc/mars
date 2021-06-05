@@ -2,9 +2,9 @@ function gemset_name(){
   string=$(rvm gemset name)
   # the same to string=`rvm gemset name`
   if [[ $string == *"/"* ]]; then
-    return "default (maybe)"
+    echo "default (maybe)"
   else
-    return $string
+    echo $string
   fi
 }
 
