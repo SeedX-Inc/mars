@@ -15,6 +15,7 @@ function install_curl(){
 
 source "$HOME/.mars/lib/mod_conf.bash"
 source "$HOME/.mars/lib/mod_edit.bash"
+source "$HOME/.mars/perks/var_loader.bash"
 
 function deploy_assets_precompile(){
   bundle exec rails assets:precompile RAILS_ENV=production
@@ -31,6 +32,18 @@ function restart_passenger(){
 function restart_nginx(){
   service nginx restart
 }
+
+function restart_redis(){
+  systemctl restart redis-server
+}
+
+function restart_redis_failed(){
+  systemctl restart redis
+}
+
+# function restart_sidekiq(){
+#   systemctl restart sidekiq
+# }
 
 function action_processor(){
   if [[ "$1" == "conf" ]]; then
