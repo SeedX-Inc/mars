@@ -9,7 +9,7 @@ function configure_sidekiq(){
     echo "[Message] Opening `sidekiq.service` file for edit..."
     vim /lib/systemd/system/sidekiq.service #edit sidekiq file
   else
-    cp $HOME/.mars/perks/sidekiq.service /lib/systemd/system/sidekiq.service
+    sudo cp $HOME/.mars/perks/sidekiq.service /lib/systemd/system/sidekiq.service
     if [[ -f /lib/systemd/system/sidekiq.service ]]; then
       echo "[OK] sidekiq.service file copied successfully."
       echo "[Message] Please, edit file `/lib/systemd/system/sidekiq.service` "
