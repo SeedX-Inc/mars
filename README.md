@@ -14,7 +14,12 @@ $ source ~/.bashrc
 
 **Deploy documentation**
 
-_This is commands for simplify deploy process_
+This is how ubuntu sourcing configuration files
+
+`.bash_profile` source from `.profile` source from `.bashrc`
+
+
+_This is commands for simplify deploy RAILS BASED APP process_
 ```bash
 $ mars precompile
 #This is alias for `assets:precompile` with production environment 

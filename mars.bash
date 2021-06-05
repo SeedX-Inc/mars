@@ -2,6 +2,7 @@
 
   echo "Mars initializing..."
   
+  #if `.bashrc` not include this string inside itself
   if ! grep -q "source ~/.mars/lib/aliases.bash" "$HOME/.bashrc" ; then
     if echo "source ~/.mars/lib/aliases.bash" >> $HOME/.bashrc ; then 
 	    echo "[OK] Mars connected successfully!"
