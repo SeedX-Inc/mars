@@ -38,7 +38,7 @@ function restart_redis(){
 }
 
 function restart_redis_failed(){
-  systemctl restart redis
+  systemctl restart redis-serverrrrrr
 }
 
 # function restart_sidekiq(){

@@ -13,8 +13,10 @@ Just to know about:p
 ```
 
 **Requirenents**
-1. vim
-2. curl
+1. git
+2. vim
+3. curl
+
 
 **Installing**
 
@@ -52,6 +54,24 @@ $ mars restart-passenger
 
 ```bash
 $ sudo mars restart-nginx
+#Here you doing restarting Systemd service, so, we recomended using this with sudo preffix
+```
+
+```bash
+$ sudo mars restart-redis
+#Here you doing restarting Systemd service, so, we recomended using this with sudo preffix
+```
+
+```bash
+#-> Be sure you have `/lib/systemd/system/sidekiq.service` file
+#IF NOT - JUST enter this before:
+$ sudo cp ~/.mars/perks/sidekiq.service /lib/systemd/system/sidekiq.service
+#THEN Setting it UP! Just change your app name and Ruby version with RVM gemset inside `sidekiq.service` file.
+#
+#
+#Yay! Let's restart this now
+# 
+$ sudo mars restart-sidekiq
 #Here you doing restarting Systemd service, so, we recomended using this with sudo preffix
 ```
 
