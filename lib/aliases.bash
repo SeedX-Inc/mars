@@ -44,6 +44,8 @@ function action_processor(){
     m_restart_passenger
   elif [[ "$1" == "restart-sidekiq" ]]; then
     m_restart_sidekiq
+  elif [[ "$1" == "restart-redis" ]]; then
+    m_restart_redis
   elif [[ "$1" == "restart-nginx" ]]; then
     m_restart_nginx
   elif [[ "$1" == "s" ]]; then

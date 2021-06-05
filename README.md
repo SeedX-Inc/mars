@@ -28,9 +28,28 @@ $ cd .mars && ./mars.bash
 $ source ~/.bashrc
 ```
 
+```bash
+$ mars s
+#Reload your shell via source ~/.bashrc ~/.bash_profile and ~/.profile
+```
+
 **Deploy documentation**
 
-
+```
+#Start all jobs for deploy
+#Before start - setup your gemset
+$ rvm gemset use my-likes_gemset2.4
+#Next - just enter:
+$ mars jober
+#list of jobs which mars will make
+#1. Migrate database
+#2. Precompile assets
+#3. Restart passenger
+#4. Restart Redis 
+#5. Restart sidekiq (with daemon-reloading of systemctl)
+# Manually you can restart NGINX by command:
+$ mars restart-nginx #OPTIONALLY!!! 
+```
 
 _This is ADDITIANALS commands for simplify deploy RAILS BASED APP process_
 ```bash
@@ -44,8 +63,6 @@ $ mars migrate
 #This is alias for `db:migrate` with production environment
 ```
 
-Use this commad with `sudo` preffix if you got some permission error.
-
 ```bash
 $ cd myapp_location
 $ mars restart-passenger
@@ -53,13 +70,15 @@ $ mars restart-passenger
 ```
 
 ```bash
-$ sudo mars restart-nginx
-#Here you doing restarting Systemd service, so, we recomended using this with sudo preffix
+$ mars restart-nginx
+#Here you doing restarting Systemd service, so, you may
+#shoult enter sudo password
 ```
 
 ```bash
-$ sudo mars restart-redis
-#Here you doing restarting Systemd service, so, we recomended using this with sudo preffix
+$ mars restart-redis
+#Here you doing restarting Systemd service, so, you may
+#shoult enter sudo password
 ```
 
 ```bash
@@ -72,15 +91,11 @@ $ mars conf sidekiq
 #Yay! Let's restart this now
 # 
 $ sudo mars restart-sidekiq
-#Here you doing restarting Systemd service, so, we recomended using this with sudo preffix
+#Here you doing restarting Systemd service, so, you may
+#shoult enter sudo password
 ```
 
 ----------------------------------------------------------
-
-```bash
-$ mars s
-#Reload your shell via source ~/.bashrc
-```
 
 **Editing**
 This few commands allows to you editing some configurations.
