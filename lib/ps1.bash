@@ -1,7 +1,7 @@
 function gemset_name(){
   string=$(rvm gemset name)
   # the same to string=`rvm gemset name`
-  if [[ $string == *"/"* ]]; then
+  if [[ $string ~= '/' ]]; then
     echo "default (maybe)"
   else
     echo $string
