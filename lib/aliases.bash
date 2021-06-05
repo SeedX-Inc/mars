@@ -120,11 +120,11 @@ function what_edit(){
 
 
 function deploy_assets_precompile(){
-  bundle exec rake assets:precompile RAILS_ENV=production
+  bundle exec rails assets:precompile RAILS_ENV=production
 }
 
 function deploy_dbmigrate(){
-  bundle exec rake db:migrate RAILS_ENV=production
+  bundle exec rails db:migrate RAILS_ENV=production
 }
 
 function restart_passenger(){
