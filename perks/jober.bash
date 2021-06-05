@@ -31,26 +31,24 @@ function m_restart_sidekiq(){
 
 function m_jober(){
   echo "[Job] db:migrate"
-  m_deploy_dbmigrate()
+  m_deploy_dbmigrate
   echo "[OK] Database migrated"
-  echo "."
+  echo "---"
   echo "[Job] assets:precompile"
-  m_deploy_assets_precompile()
+  m_deploy_assets_precompile
   echo "[OK] Assets precompiled"
-  echo "."
+  echo "---"
   echo "[Job] passenger:restart"
-  m_restart_passenger()
+  m_restart_passenger
   echo "[OK] Passenger restarts"
-  echo "."
+  echo "---"
   echo "[Job] redis:restart"
-  m_restart_redis()
+  m_restart_redis
   echo "[OK] Redis restarts"
-  echo "."
+  echo "---"
   echo "[Job] sidekiq:restart"
-  m_restart_sidekiq()
+  m_restart_sidekiq
   echo "[OK] Sidekiq restarts"
-  echo "."
-  echo "."
-  echo "."
+  echo "---"
   echo "All jobs finishes"
 }

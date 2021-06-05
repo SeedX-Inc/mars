@@ -51,7 +51,7 @@ function action_processor(){
 	  source ~/.profile
 	  source ~/.bashrc
   elif [[ "$1" == "jober" ]]; then
-	  m_jober()
+	  m_jober
   else
 	  echo "[ERROR] Unknown command"
   fi
