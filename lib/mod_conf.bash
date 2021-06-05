@@ -5,7 +5,7 @@ function configure_sidekiq(){
   # проверка существования файла
   if [[ -f /lib/systemd/system/sidekiq.service ]]; then
     echo "[ERROR] sidekiq.service file already exist."
-    echo "[Message] Opening sidekiq.service file for edit..."
+    echo "Opening sidekiq.service file for edit..."
     sleep 5
     vim /lib/systemd/system/sidekiq.service #edit sidekiq file
   else
@@ -17,7 +17,7 @@ EOF
 
     if [[ -f /lib/systemd/system/sidekiq.service ]]; then
       echo "[OK] sidekiq.service file copied successfully."
-      echo "[Message] Please, edit file /lib/systemd/system/sidekiq.service "
+      echo "Next let's edit file /lib/systemd/system/sidekiq.service"
     else
       echo "[ERROR] sidekiq.service file not copied. Unknown error!"
     fi
