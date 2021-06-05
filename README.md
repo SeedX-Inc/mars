@@ -39,6 +39,8 @@ $ mars s
 #Start all jobs for deploy
 #Before start - setup your gemset
 $ rvm gemset use my-likes_gemset2.4
+```
+```bash
 #Next - just enter:
 $ mars jober
 #list of jobs which mars will make
@@ -47,6 +49,8 @@ $ mars jober
 #3. Restart passenger
 #4. Restart Redis 
 #5. Restart sidekiq (with daemon-reloading of systemctl)
+```
+```bash
 # Manually you can restart NGINX by command:
 $ mars restart-nginx #OPTIONALLY!!! 
 ```
