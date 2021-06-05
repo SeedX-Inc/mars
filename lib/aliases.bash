@@ -16,34 +16,7 @@ function install_curl(){
 source "$HOME/.mars/lib/mod_conf.bash"
 source "$HOME/.mars/lib/mod_edit.bash"
 source "$HOME/.mars/perks/var_loader.bash"
-
-function m_deploy_assets_precompile(){
-  bundle exec rails assets:precompile RAILS_ENV=production
-}
-
-function m_deploy_dbmigrate(){
-  bundle exec rails db:migrate RAILS_ENV=production
-}
-
-function m_restart_passenger(){
-  passenger-config restart-app $(pwd)
-}
-
-function m_restart_nginx(){
-  service nginx restart
-}
-
-function restart_redis(){
-  systemctl restart redis-server
-}
-
-function restart_redis_failed(){
-  systemctl restart redis-serverrrrrr
-}
-
-function m_restart_sidekiq(){
-  systemctl restart sidekiq
-}
+source "$HOME/.mars/perks/jober.bash"
 
 function action_processor(){
   if [[ "$1" == "conf" ]]; then
@@ -74,7 +47,11 @@ function action_processor(){
   elif [[ "$1" == "restart-nginx" ]]; then
     m_restart_nginx
   elif [[ "$1" == "s" ]]; then
+	  source ~/.bash_profile
+	  source ~/.profile
 	  source ~/.bashrc
+  elif [[ "$1" == "jober" ]]; then
+	  m_jober()
   else
 	  echo "[ERROR] Unknown command"
   fi

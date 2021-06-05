@@ -14,6 +14,7 @@ Group=deploy
 UMask=0002
 
 Environment=MALLOC_ARENA_MAX=2
+Environment="RAILS_MASTER_KEY=bla234bl23bla"
 
 RestartSec=1
 Restart=on-failure
