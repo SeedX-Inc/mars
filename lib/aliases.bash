@@ -17,19 +17,19 @@ source "$HOME/.mars/lib/mod_conf.bash"
 source "$HOME/.mars/lib/mod_edit.bash"
 source "$HOME/.mars/perks/var_loader.bash"
 
-function deploy_assets_precompile(){
+function m_deploy_assets_precompile(){
   bundle exec rails assets:precompile RAILS_ENV=production
 }
 
-function deploy_dbmigrate(){
+function m_deploy_dbmigrate(){
   bundle exec rails db:migrate RAILS_ENV=production
 }
 
-function restart_passenger(){
+function m_restart_passenger(){
   passenger-config restart-app $(pwd)
 }
 
-function restart_nginx(){
+function m_restart_nginx(){
   service nginx restart
 }
 
@@ -41,7 +41,7 @@ function restart_redis_failed(){
   systemctl restart redis-serverrrrrr
 }
 
-function restart_sidekiq(){
+function m_restart_sidekiq(){
   systemctl restart sidekiq
 }
 
@@ -64,13 +64,15 @@ function action_processor(){
   elif [[ "$1" == "edit" ]]; then
     what_edit $2
   elif [[  "$1" == "precompile" ]]; then
-    deploy_assets_precompile
+    m_deploy_assets_precompile
   elif [[  "$1" == "migrate" ]]; then
-    deploy_dbmigrate
+    m_deploy_dbmigrate
   elif [[ "$1" == "restart-passenger" ]]; then
-    restart_passenger
+    m_restart_passenger
+  elif [[ "$1" == "restart-sidekiq" ]]; then
+    m_restart_sidekiq
   elif [[ "$1" == "restart-nginx" ]]; then
-    restart_nginx
+    m_restart_nginx
   elif [[ "$1" == "s" ]]; then
 	  source ~/.bashrc
   else
