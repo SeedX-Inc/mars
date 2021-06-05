@@ -1,12 +1,12 @@
 # mars
 Ubuntu server tool
 
-`.mars` folder need to be in your ubuntu home folder. Don't setup this via root User.
+`.mars` folder needs to be in your ubuntu home folder. Don't setup this via root User.
 
 **Additional info**
 
-This is how ubuntu sourcing configuration files.
-Just to know about:p
+This is how should setup the ubuntu sourcing configuration files.
+So you know about:p
 
 ```
 `~/.bash_profile` source from `~/.profile` source from `~/.bashrc` source from `~/.mars/aliases.bash`
@@ -55,7 +55,7 @@ $ mars jober
 $ mars restart-nginx #OPTIONALLY!!! 
 ```
 
-_This is ADDITIANALS commands for simplify deploy RAILS BASED APP process_
+_These are ADDITIANALS commands for simplify deploy RAILS BASED APP process_
 ```bash
 $ mars precompile
 #This is alias for `assets:precompile` with production environment 
@@ -102,7 +102,7 @@ $ sudo mars restart-sidekiq
 ----------------------------------------------------------
 
 **Editing**
-This few commands allows to you editing some configurations.
+Here are a few commands which allows you to edit some configurations.
 
 ```bash
 $ mars edit vim
@@ -126,7 +126,7 @@ $ mars edit hello
 
 **Configurating**
 
-Commands which allows to configure something.
+Commands which allows configuration
 
 ```bash
 $ mars conf vim
