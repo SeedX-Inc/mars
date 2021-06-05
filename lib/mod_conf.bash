@@ -15,7 +15,7 @@ function configure_sidekiq(){
       echo "[Message] Please, edit file `/lib/systemd/system/sidekiq.service` "
     else
       echo "[ERROR] `sidekiq.service` file not copied. Unknown error!"
-    else
+    fi
   fi
 }
 
