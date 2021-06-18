@@ -1,55 +1,57 @@
-# mars
-Ubuntu server tool
+# Mars
+This is a bash written tool for too simple deployment your rails application.
 
-`.mars` folder needs to be in your ubuntu home folder. Don't setup this via root User.
+![logo](https://github.com/seedx-inc/mars/blob/master/mars_logo.png?raw=true)
 
-**Additional info**
+ Don't setup this via root User.
+ 
+## Installing
 
-This is how should setup the ubuntu sourcing configuration files.
-So you know about:p
-
-```
-`~/.bash_profile` source from `~/.profile` source from `~/.bashrc` source from `~/.mars/aliases.bash`
-```
-
-**Requirenents**
-1. git
-2. vim
-3. curl
-
-
-**Installing**
+> **Requirenents**
+> 1. git
+> 2. vim
+> 3. curl
+> 4. rvm
 
 ```bash
 $ git clone https://github.com/enotikalt/mars.git
 $ mv mars ~/.mars
 $ cd .mars && ./mars.bash
-#connecting mars to your .bashrc if not connected yet
+```
+> `.mars` folder needs to be in your ubuntu home folder.
+
+Reload your `.bash_profile` or `.profile` or `.bashrc` file to start using it
+```bash
 $ source ~/.bashrc
 ```
-
+Test by command
 ```bash
 $ mars s
-#Reload your shell via source ~/.bashrc ~/.bash_profile and ~/.profile
 ```
+If success - it will not show an error lol:p
 
-**Deploy documentation**
+## Deploy rails application
 
-```
-#Start all jobs for deploy
-#Before start - setup your gemset
-$ rvm gemset use my-likes_gemset2.4
-```
+1. Go to your app folder location:
 ```bash
-#Next - just enter:
-$ mars jober
-#list of jobs which mars will make
-#1. Migrate database
-#2. Precompile assets
-#3. Restart passenger
-#4. Restart Redis 
-#5. Restart sidekiq (with daemon-reloading of systemctl)
+$ cd /home/deploy_user/myapp
 ```
+
+2. Choose your RVM gemset:
+```bash
+$ rvm gemset use my_gemset_name
+```
+3. Setup deploy process
+
+```bash
+$ mars jober
+```
+> List of jobs which mars will make:
+> 1. Migrate database
+> 2. Precompile assets
+> 3. Restart passenger
+> 4. Restart Redis 
+> 5. Restart sidekiq (with daemon-reloading of systemctl)
 ```bash
 # Manually you can restart NGINX by command:
 $ mars restart-nginx #OPTIONALLY!!! 
@@ -146,3 +148,13 @@ $ mars s
 $ mars conf git name email username
 #rewriting ~/.gitconfig and connecting gitconfig of mars
 ```
+
+
+## Additional info
+
+This is how should setup the ubuntu sourcing configuration files.
+So you know about:p
+
+
+> `~/.bash_profile` source from `~/.profile` source from `~/.bashrc` source from `~/.mars/aliases.bash`
+
