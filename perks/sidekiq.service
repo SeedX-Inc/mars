@@ -7,7 +7,7 @@ Type=notify
 WatchdogSec=10
 
 WorkingDirectory=/home/deploy/myapp
-ExecStart=/home/deploy/.rvm/gems/ruby-3.0.0@r611/wrappers/bundle exec sidekiq -e production
+ExecStart=/bin/bash /home/deploy/.rvm/gems/ruby-3.0.0@blablagemset/wrappers/bundle exec sidekiq -e production --config config/sidekiq.yml --logfile log/sidekiq.log
 
 User=deploy
 Group=deploy
