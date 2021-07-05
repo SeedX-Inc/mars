@@ -16,7 +16,7 @@ This is a bash written tool for too simple deployment your rails application.
 ```bash
 $ git clone https://github.com/enotikalt/mars.git
 $ mv mars ~/.mars
-$ cd .mars && ./mars.bash
+$ touch ~/marsvars && cd .mars && ./mars.bash
 ```
 > `.mars` folder needs to be in your ubuntu home folder.
 
@@ -26,7 +26,7 @@ $ source ~/.bashrc
 ```
 Test by command
 ```bash
-$ mars s
+$ mars r #reload
 ```
 If success - it will not show an error lol:p
 
@@ -44,14 +44,16 @@ $ rvm gemset use my_gemset_name
 3. Setup deploy process
 
 ```bash
-$ mars jober
+$ mars s #start
 ```
 > List of jobs which mars will make:
-> 1. Migrate database
-> 2. Precompile assets
-> 3. Restart passenger
-> 4. Restart Redis 
-> 5. Restart sidekiq (with daemon-reloading of systemctl)
+> 1. Bundle install
+> 2. Migrate database
+> 3. Precompile assets
+> 4. Restart passenger
+> 5. Restart Redis 
+> 6. Restart sidekiq (with daemon-reloading of systemctl)
+
 ```bash
 # Manually you can restart NGINX by command:
 $ mars restart-nginx #OPTIONALLY!!! 
