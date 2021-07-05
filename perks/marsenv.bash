@@ -1,11 +1,12 @@
-#-> Let's paste here your ENV variables
-#-> for rails application
+#-> DON'T MODIFY THIS FILE
+#-> Just copy variables from here, which you need in to /home/youruser/marsvars.bash file
+#-> These are variables which using by your rails application
 
 #-> 'redis' gem searching this variable by default 
 #-> `6379` - default redis-server port
 #export REDIS_URL=redis://127.0.0.1:6379/0
 
-#export RAILS_ENV=production (NOT REMOVE THIS WITHOUT REASON)
+#export RAILS_ENV=production
 
 #-> rails uses this variable by default NOT OVERTLY
 #export DATABASE_URL=postgresql://deploy:qwerty@127.0.0.1/myapp_database_name (often myapp_production)
@@ -26,4 +27,4 @@
 #-> using for RVM. May exist in .bashrc by shit happend :)
 #export PATH="$PATH:$HOME/.rvm/bin"
 
-source "$HOME/.marsvars"
+source "$HOME/marsvars.bash"

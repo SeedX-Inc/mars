@@ -26,8 +26,8 @@ EOF
 ###---PS1 var--###
 ##################
 function configure_hello(){
-  if ! grep -q "source ~/.mars/lib/ps1.bash" "$HOME/.bashrc" ; then
-    if echo "source ~/.mars/lib/ps1.bash" >> $HOME/.bashrc ; then
+  if ! grep -q "source ~/.mars/perks/ps1.bash" "$HOME/.bashrc" ; then
+    if echo "source ~/.mars/perks/ps1.bash" >> $HOME/.bashrc ; then
       echo "[OK] Hello prompt message changed successfully. Make 'mars s' for reloading shell." 
     else
       echo "[ERROR] Couldn't change your prompt hello message"
@@ -44,7 +44,7 @@ function configure_hello(){
 ##################
 function configure_gitconfig(){
   echo "[include]" > $HOME/.gitconfig #rewrite old file
-  echo "  path = ~/.mars/lib/_gitconfig" >> $HOME/.gitconfig #append to new file
+  echo "  path = ~/.mars/perks/_gitconfig" >> $HOME/.gitconfig #append to new file
   echo "[user]" >> $HOME/.gitconfig #append to new file
   echo "  name = $1" >> $HOME/.gitconfig #append to new file
   echo "  email = $2" >> $HOME/.gitconfig #append to new file
@@ -95,27 +95,27 @@ function install_colorscheme(){
 
 function configure_vim(){
   if type vim &> /dev/null ; then
-	  if [[ -f $HOME/.vimrc ]]; then
-		  if rm $HOME/.vimrc ; then
-			  echo "[OK] Old (~/.vimrc) file removed"
-		  else
-			  echo "[ERROR] Couldn't remove old (~/.vimrc) file"
+    if [[ -f $HOME/.vimrc ]]; then
+      if rm $HOME/.vimrc ; then
+        echo "[OK] Old (~/.vimrc) file removed"
+      else
+        echo "[ERROR] Couldn't remove old (~/.vimrc) file"
         exit
-		  fi
-	  else
+      fi
+    else
       echo "[OK] .vimrc not exist yet. But will be created."
-	  fi
+    fi
   
-    if echo "source $HOME/.mars/lib/_vimrc" >> $HOME/.vimrc ; then
-		  echo "[OK] New configuration wrote to new (~/.vimrc) file"
+    if echo "source $HOME/.mars/perks/_vimrc" >> $HOME/.vimrc ; then
+      echo "[OK] New configuration wrote to new (~/.vimrc) file"
       install_curl
       install_vimplug
       install_colorscheme
-	  else
-		  echo "[ERROR] Couldn't write new configuration to (~/.vimrc)"
+    else
+      echo "[ERROR] Couldn't write new configuration to (~/.vimrc)"
       exit
-	  fi
+    fi
   else
-	   echo "Seems like Vim not installed"
+    echo "Seems like Vim not installed"
   fi
 }

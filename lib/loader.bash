@@ -15,15 +15,15 @@ function install_curl(){
 
 source "$HOME/.mars/lib/mod_conf.bash"
 source "$HOME/.mars/lib/mod_edit.bash"
-source "$HOME/.mars/perks/var_loader.bash"
-source "$HOME/.mars/perks/jober.bash"
+source "$HOME/.mars/perks/marsenv.bash"
+source "$HOME/.mars/perks/worker.bash"
 
 function action_processor(){
   if [[ "$1" == "conf" ]]; then
     case "$2" in
-	    "vim" )
-		    configure_vim
-		    ;;
+      "vim" )
+        configure_vim
+        ;;
       "hello" )
         configure_hello
         ;;
@@ -31,8 +31,8 @@ function action_processor(){
         configure_gitconfig $3 $4 $5
         ;;
       "sidekiq" )
-		    configure_sidekiq
-		    ;;
+        configure_sidekiq
+        ;;
     esac
   elif [[ "$1" == "edit" ]]; then
     what_edit $2
@@ -48,12 +48,12 @@ function action_processor(){
     m_restart_redis
   elif [[ "$1" == "restart-nginx" ]]; then
     m_restart_nginx
-  elif [[ "$1" == "s" ]]; then
+  elif [[ "$1" == "r" ]]; then
 	  source ~/.bash_profile
 	  source ~/.profile
 	  source ~/.bashrc
-  elif [[ "$1" == "jober" ]]; then
-	  m_jober
+  elif [[ "$1" == "s" ]]; then
+	  m_worker
   else
 	  echo "[ERROR] Unknown command"
   fi
@@ -62,3 +62,4 @@ function action_processor(){
 
 alias mars="action_processor"
 alias g="git"
+alias ..="cd .."

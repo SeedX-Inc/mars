@@ -1,12 +1,12 @@
 function what_edit(){
   if [[ "$1" == "vim" ]]; then
-    vim ~/.mars/lib/_vimrc
+    vim ~/.mars/perks/_vimrc
   elif [[ "$1" == "git" ]]; then
-    vim ~/.mars/lib/_gitconfig
-	elif [[ "$1" == "core" ]]; then
-		vim ~/.mars/lib/aliases.bash
+    vim ~/.mars/perks/_gitconfig
+  elif [[ "$1" == "core" ]]; then
+    vim ~/.mars/lib/loader.bash
   elif [[ "$1" == "hello" ]]; then
-    vim ~/.mars/lib/ps1.bash
+    vim ~/.mars/perks/ps1.bash
   else
     echo "[ERROR] Incorrect command."
   fi
