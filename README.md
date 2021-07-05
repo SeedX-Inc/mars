@@ -158,5 +158,5 @@ This is how should setup the ubuntu sourcing configuration files.
 So you know about:p
 
 
-> `~/.bash_profile` source from `~/.profile` source from `~/.bashrc` source from `~/.mars/aliases.bash`
+> `~/.bash_profile` source from `~/.profile` source from `~/.bashrc` source from `~/.mars/lib/loader.bash`
 
