@@ -145,6 +145,8 @@ $ mars conf hello
 $ mars s
 #reloading shell (.bashrc)
 ```
+![bash prompt](https://github.com/SeedX-Inc/mars/blob/master/Screenshot%202021-07-06%20at%2000.01.53.png?raw=true)
+
 
 ```bash
 $ mars conf git name email username
