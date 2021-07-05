@@ -1,7 +1,7 @@
 #This file makes deploy jobs together
 
 function m_deploy_bundle_install(){
-  bundle exec bundle install RAILS_ENV=production
+  bundle exec bundle install
 }
 
 
