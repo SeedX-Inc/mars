@@ -142,8 +142,8 @@ $ mars conf vim
 ```bash
 $ mars conf hello
 #connecting Mars PS1 (prompt hello message) configuration to your .bashrc 
-$ mars s
-#reloading shell (.bashrc)
+$ mars r
+#reloading shell
 ```
 ![bash prompt](https://github.com/SeedX-Inc/mars/blob/master/Screenshot%202021-07-06%20at%2000.01.53.png?raw=true)
 
