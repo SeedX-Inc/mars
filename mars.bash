@@ -15,3 +15,14 @@ if ! grep -q "source ~/.mars/lib/loader.bash" "$HOME/.bashrc" ; then
 else
   echo "[OK] Mars already connected to your '.bashrc' :)"
 fi
+
+  if [[ -f ~/marsvars.bash ]]; then
+    echo "Warning: ~/marsvars.bash file already exist."
+  else
+    echo "Paste your rails variables here. Let's read examples in ~/.mars/perks/marsenv.bash" > marsvars.bash
+    if [[ -f ~/marsvars.bash ]]; then
+      echo "[OK] File ~/marsvars.bash successfully created. Let's read variables example in ~/.mars/perks/marsenv.bash"
+    else
+      echo "[ERROR] Couldn't create ~/marsvars.bash file."
+    fi
+  fi
